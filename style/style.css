@@ -33,9 +33,9 @@ header .nav_list {
   justify-content: space-between;
 }
 
-header.active{
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.37);
-  }
+header.active {
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.37);
+}
 
 .nav_list {
   padding-right: 20px;
@@ -81,6 +81,9 @@ header.active{
   width: 120px;
   height: 40px;
   cursor: pointer;
+}
+.item a:hover {
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
 }
 
 .toggle-button {
@@ -163,5 +166,9 @@ header.active{
 
   .toggle-button.active .toggle-item:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .logo-container {
+    margin: 10px auto;
   }
 }
