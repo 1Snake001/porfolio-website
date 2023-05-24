@@ -78,3 +78,86 @@ header .nav_list {
   height: 40px;
   cursor: pointer;
 }
+
+.toggle-button {
+  position: fixed;
+  right: 16px;
+  top: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+}
+
+.toggle-button:hover {
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  transition: all 0.3s ease;
+}
+
+.toggle-item {
+  background-color: black;
+  -webkit-text-fill-color: transparent;
+  height: 2px;
+  width: 30px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    position: relative;
+    top: -420px;
+    z-index: -1;
+    transition: all 0.7s ease;
+    background-color: rgb(229, 231, 237);
+    width: 100vw;
+    border-radius: 15px;
+  }
+
+  nav.active {
+    display: block;
+    top: 0px;
+  }
+
+  nav .nav_list {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.37);
+    background-color: rgb(229, 231, 237);
+  }
+
+  .item {
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+
+  .item:last-child {
+    margin-bottom: 50px;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .toggle-button.active .toggle-item:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .toggle-button.active .toggle-item:nth-child(2) {
+    opacity: 0;
+  }
+
+  .toggle-button.active .toggle-item:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
