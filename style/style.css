@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(100 104 118);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(229, 231, 237);
+}
+
+header {
+  position: fixed;
+  z-index: 1;
+  height: 80px;
+  min-width: 250px;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(229, 231, 237);
+  border-radius: 15px;
+  transition: all 0.5 ease;
+}
+
+header,
+header .nav_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_list {
+  padding-right: 20px;
+}
+
+.head-top {
+  width: 100vw;
+  background-color: rgb(229, 231, 237);
+  border-radius: 15px;
+}
+
+.logo {
+  width: 57px;
+}
+
+.logo-container {
+  width: 57px;
+  border-radius: 150px;
+  box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px #fff;
+  margin: 10px 0 10px 20px;
+}
+
+.logo-container:hover {
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+}
+
+.item {
+  padding: 10px;
+  list-style: none;
+}
+
+.item a {
+  text-decoration: none;
+  padding: 10px 25px;
+  font-weight: 300;
+  position: relative;
+  color: rgb(56, 55, 55);
+  background-color: rgb(229, 231, 237);
+  font-size: 1.3rem;
+  border-radius: 15px;
+  -webkit-box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+}
