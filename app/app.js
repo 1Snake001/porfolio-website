@@ -11,6 +11,11 @@ function activeClassListSwitch() {
   nav.classList.toggle("active");
 }
 
+function activeClassListRemover(){
+    toggleButton.classList.remove("active");
+    nav.classList.remove("active");
+  };
+
 toggleButton.addEventListener("click", activeClassListSwitch);
 
 window.addEventListener("scroll", function () {
@@ -21,3 +26,10 @@ window.addEventListener("scroll", function () {
     header.classList.remove("active");
   }
 });
+
+window.addEventListener('resize', function(){
+    const windowWidth = window.innerWidth;
+    if(windowWidth > 700){
+        activeClassListRemover();
+    }
+  })

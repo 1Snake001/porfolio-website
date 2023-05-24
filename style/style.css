@@ -69,7 +69,7 @@ header.active {
 
 .item a {
   text-decoration: none;
-  padding: 10px 25px;
+  padding: 7px 25px;
   font-weight: 300;
   position: relative;
   color: rgb(56, 55, 55);
@@ -104,7 +104,6 @@ header.active {
 
 .toggle-button:hover {
   box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
-  transition: all 0.3s ease;
 }
 
 .toggle-item {
