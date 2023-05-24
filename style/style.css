@@ -33,6 +33,10 @@ header .nav_list {
   justify-content: space-between;
 }
 
+header.active{
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.37);
+  }
+
 .nav_list {
   padding-right: 20px;
 }
