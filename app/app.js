@@ -9,7 +9,7 @@ const toggleButton = document.querySelector(".toggle-button");
 function activeClassListSwitch() {
   toggleButton.classList.toggle("active");
   nav.classList.toggle("active");
-}
+};
 
 function activeClassListRemover(){
     toggleButton.classList.remove("active");
@@ -32,4 +32,4 @@ window.addEventListener('resize', function(){
     if(windowWidth > 700){
         activeClassListRemover();
     }
-  })
+  }); 

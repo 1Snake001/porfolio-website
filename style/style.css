@@ -14,6 +14,8 @@ body {
   background-color: rgb(229, 231, 237);
 }
 
+/* Header style */
+
 header {
   position: fixed;
   z-index: 1;
@@ -82,6 +84,7 @@ header.active {
   height: 40px;
   cursor: pointer;
 }
+
 .item a:hover {
   box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
 }
@@ -112,6 +115,194 @@ header.active {
   height: 2px;
   width: 30px;
   transition: all 0.3s ease;
+}
+
+/* Herro Section style */
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 0px 100px 0px 100px;
+}
+
+.container {
+  position: relative;
+  top: 130px;
+  height: 800px;
+  width: 100%;
+  border-radius: 95px;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+}
+
+.container:last-child {
+  margin-bottom: 50px;
+}
+
+.self-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 25px;
+  margin: auto;
+  width: 280px;
+  height: 280px;
+  background: #eef0f4;
+  border-radius: 100%;
+  box-shadow: inset 16.52px 16.52px 27px #a1a2a5,
+    inset -16.52px -16.52px 27px #ffffff;
+}
+
+.name-container {
+  position: relative;
+  top: 45px;
+  margin: auto;
+  height: 5px;
+  width: 300px;
+  background-color: #e6e7ee;
+  padding: 23px;
+  resize: none;
+  line-height: 25px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  -ms-overflow-style: none;
+}
+
+.name {
+  text-align: center;
+  font-weight: 300;
+  position: relative;
+  bottom: 12px;
+  color: rgb(56, 55, 55);
+}
+
+.self-img {
+  position: relative;
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  border: 5px solid rgb(229, 231, 237);
+  background: linear-gradient(145deg, #ffffff, #cbcdd0);
+  border-radius: 100%;
+  box-shadow: 29.73px 29.73px 54px #c4c6c9, -29.73px -29.73px 54px #ffffff;
+}
+
+.main-content {
+  position: relative;
+  top: 80px;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  background-color: #e6e7ee;
+  padding: 25px;
+  resize: none;
+  line-height: 25px;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  -ms-overflow-style: none;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: rgb(229, 231, 237);
+  border-radius: 15%;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  cursor: pointer;
+}
+
+.icon-container:hover {
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+}
+
+.phone-svg {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  opacity: 0.8;
+}
+
+.git-svg {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  opacity: 0.8;
+}
+.mail-svg {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  opacity: 0.8;
+}
+
+#skills {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 400;
+  color: rgb(56, 55, 55);
+}
+
+.skills-first-box,
+.skills-second-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.skills-third-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#html,
+#css,
+#js,
+#react {
+  border-radius: 15px;
+  -webkit-box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  text-align: center;
+  width: 120px;
+  height: 20px;
+  padding: 7px 0;
+  margin-bottom: 15px;
+}
+
+#b-strap,
+#sc {
+  border-radius: 15px;
+  -webkit-box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  text-align: center;
+  width: 270px;
+  height: 20px;
+  padding: 7px 0;
+  margin-bottom: 15px;
+}
+
+h4 {
+  position: relative;
+  font-weight: 400;
+  bottom: 3px;
 }
 
 @media (max-width: 700px) {
