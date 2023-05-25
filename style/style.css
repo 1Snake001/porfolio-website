@@ -475,6 +475,88 @@ hr {
   margin: 100px;
 }
 
+/* Services section style */
+.services {
+  position: relative;
+  font-size: 10rem;
+  color: rgb(100 104 118);
+  text-shadow: 3px 3px 10px #cbced1, -3px -3px 10px #fff;
+  font-weight: 500;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-text-stroke: 1px rgba(60, 59, 59, 0.067);
+  text-align: center;
+  letter-spacing: 10px;
+  top: 80px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 200px 100px 0px 100px;
+}
+
+.services-inner-container {
+  position: relative;
+  height: 800px;
+  width: 100%;
+  border-radius: 95px;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  margin-bottom: 50px;
+}
+
+.services-png-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 80px;
+  margin: auto;
+  width: 80%;
+  height: 300px;
+  padding: 25px;
+  resize: none;
+  line-height: 25px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+}
+
+.services-secondary-container {
+  height: 300px;
+  text-align: center;
+  margin: 40px;
+}
+
+#web-dev {
+  position: relative;
+  bottom: 35px;
+  width: 240px;
+  opacity: 0.6;
+}
+
+#video {
+  position: relative;
+  width: 300px;
+  left: 25px;
+}
+
+#web-title,
+#video-title {
+  margin: 80px 0 40px 0;
+  color: rgb(100, 104, 118);
+}
+
+.web-text,
+.video-text {
+  margin: auto;
+  text-align: justify;
+  width: 300px;
+}
+
+
+
 @media (max-width: 700px) {
   header {
     flex-direction: column;
