@@ -22,7 +22,7 @@
       <nav>
         <ul class="nav_list">
           <li class="item">
-            <a href="#">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li class="item">
             <a href="#projects">Projects</a>
@@ -37,7 +37,7 @@
       </nav>
     </header>
 
-    <section class="hero-container">
+    <section id="home" class="hero-container">
       <div class="container">
         <div class="self-container">
           <img src="assets/self.png" alt="self" class="self-img" >
@@ -219,6 +219,45 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="contact" class="contact-container">
+      <h1 class="contact">CONTACT</h1>
+
+      <form action="#" method="POST" class="info" novalidate>
+        <div class="form-group">
+          <label for="inputName">Name</label>
+          <input type="text" class="name-input" id="inputName" >
+          <div class="error name-error-message">
+            
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail1">Email</label>
+          <input
+            type="email"
+            class="email-input"
+            id="inputEmail1"
+          >
+          <div class="error email-error-message">
+     
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="formControlTextarea1">Message</label>
+          <textarea
+            class="textarea"
+            id="formControlTextarea1"
+            rows="10"
+          ></textarea>
+          <div class="error textarea-error-message">
+          
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
     </section>
 
     <script src="app/app.js"></script>

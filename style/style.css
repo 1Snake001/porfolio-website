@@ -16,7 +16,6 @@ body {
 }
 
 /* Header style */
-
 header {
   position: fixed;
   z-index: 1;
@@ -540,6 +539,7 @@ hr {
   position: relative;
   width: 300px;
   left: 25px;
+  bottom: 8px;
 }
 
 #web-title,
@@ -555,7 +555,95 @@ hr {
   width: 300px;
 }
 
+/* Constact section style */
+.contact {
+  font-size: 10rem;
+  color: rgb(100 104 118);
+  text-shadow: 2px 2px 2px #fff, -2px -2px 2px #cbced1;
+  font-weight: 500;
+  margin-bottom: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-text-stroke: 1px rgba(60, 59, 59, 0.067);
+  letter-spacing: 10px;
+}
 
+.contact-container {
+  position: relative;
+  margin: 0px 100px 0px 100px;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-top: 20px;
+  display: block;
+}
+
+input {
+  height: 40px;
+  width: 40vw;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  text-align: center;
+  margin: 10px 0 0 0;
+  display: block;
+}
+
+.email-input.active,
+.name-input.active,
+.textarea.active {
+  border: 2px solid red;
+}
+
+textarea {
+  padding: 10px 0;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  width: 40vw;
+  margin-top: 10px;
+}
+
+.btn-submit {
+  position: relative;
+  margin: auto;
+  background-color: rgb(229, 231, 237);
+  font-size: 1.3rem;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  -webkit-box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms;
+  width: 40vw;
+  height: 40px;
+  margin: 40px 0 80px 0;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  position: relative;
+  bottom: 5px;
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+}
 
 @media (max-width: 700px) {
   header {
