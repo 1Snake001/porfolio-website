@@ -305,6 +305,79 @@ h4 {
   bottom: 3px;
 }
 
+.typing-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 80px;
+  margin: auto;
+  width: 80%;
+  height: 250px;
+  padding: 25px;
+  line-height: 25px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+}
+
+.typing-content {
+  line-height: 50px;
+  text-align: center;
+}
+
+.typing-content a {
+  cursor: default;
+}
+
+.bio-external-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  top: 80px;
+  margin: auto;
+  width: 80%;
+  height: 370px;
+  background-color: #e6e7ee;
+  padding-top: 25px;
+}
+
+.bio-text-content {
+  margin-top: 20px;
+  text-align: justify;
+  font-weight: 300;
+}
+
+#bio {
+  text-align: center;
+  font-weight: 300;
+  color: rgb(100 104 118);
+}
+
+.cv {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: auto;
+  border: none;
+  outline: none;
+  font-weight: 300;
+  color: rgb(56, 55, 55);
+  font-size: 1.3rem;
+  border-radius: 20px;
+  -webkit-box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  width: 180px;
+  cursor: pointer;
+}
+
+.cv:hover{
+  box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+}
+
 @media (max-width: 700px) {
   header {
     flex-direction: column;
