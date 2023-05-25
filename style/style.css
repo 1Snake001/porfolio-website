@@ -397,6 +397,7 @@ h4 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   -webkit-text-stroke: 1px rgba(60, 59, 59, 0.067);
   letter-spacing: 10px;
+  top: 10px;
 }
 
 hr {

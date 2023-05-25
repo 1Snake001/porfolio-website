@@ -1,5 +1,7 @@
 "use strict";
 
+import services from "../services/services.js";
+
 // DOM Elements
 const header = document.querySelector("header");
 const nav = document.querySelector("nav");
@@ -55,10 +57,9 @@ window.addEventListener('resize', function(){
     link.addEventListener("click", () => {
       activeClassListRemover();
     });
-
 });
   
-  // Typeing handler
+// Typeing handler
 class TxtType {
   constructor(el, toRotate, period) {
     this.toRotate = toRotate;
