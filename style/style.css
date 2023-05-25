@@ -375,8 +375,104 @@ h4 {
   cursor: pointer;
 }
 
-.cv:hover{
+.cv:hover {
   box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
+}
+/* Project section style */
+.projects-container {
+  position: relative;
+  margin: 150px 100px 50px 100px;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  padding: 25px;
+}
+
+.project {
+  font-size: 10rem;
+  color: rgb(100 104 118);
+  text-shadow: 2px 2px 2px #fff, -2px -2px 2px #cbced1;
+  font-weight: 500;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-text-stroke: 1px rgba(60, 59, 59, 0.067);
+  letter-spacing: 10px;
+}
+
+hr {
+  border-radius: 30px;
+  margin: 20px auto;
+  background: rgb(219, 220, 223);
+  height: 5px;
+  width: 55vw;
+  box-shadow: 2px 2px 2px #fff, -2px -2px 2px #cbced1;
+  opacity: 0.4;
+}
+
+.frontend-title {
+  padding-top: 90px;
+}
+
+.frontend-title,
+.video-title {
+  font-size: 5rem;
+  color: rgb(100 104 118);
+  text-shadow: 2px 2px 2px #fff, -2px -2px 2px #cbced1;
+  font-weight: 500;
+  margin: 75px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 3px;
+}
+
+#onewheel,
+#dance,
+#fitness,
+#business,
+#quiz,
+#space-ship,
+#bruderbau,
+#tourist {
+  position: relative;
+  width: 96%;
+  height: 96%;
+  -webkit-filter: grayscale(70%);
+  filter: grayscale(70%);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+  top: 2px;
+}
+#onewheel:hover,
+#dance:hover,
+#fitness:hover,
+#business:hover,
+#quiz:hover,
+#space-ship:hover,
+#bruderbau:hover,
+#tourist:hover {
+  transform: scale(1.3);
+}
+
+.img-container {
+  position: relative;
+  width: 102%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: rgb(219, 220, 223);
+  border-radius: 10px;
+  box-shadow: 7px 7px 14px #cbced1, -7px -7px 14px #fff;
+  overflow: hidden;
+}
+
+.video-container,
+.frontend-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin: 100px;
 }
 
 @media (max-width: 700px) {
