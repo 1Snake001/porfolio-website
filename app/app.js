@@ -6,7 +6,7 @@ import services from "../services/services.js";
 const header = document.querySelector("header");
 const nav = document.querySelector("nav");
 const toggleButton = document.querySelector(".toggle-button");
-const navLinks = document.querySelectorAll(".item")
+const navLinks = document.querySelectorAll(".item");
 const errors = document.querySelectorAll(".error");
 
 // DOM inputs
@@ -26,12 +26,12 @@ const textAreaErrorMessage = document.querySelector(".textarea-error-message");
 function activeClassListSwitch() {
   toggleButton.classList.toggle("active");
   nav.classList.toggle("active");
-};
+}
 
-function activeClassListRemover(){
-    toggleButton.classList.remove("active");
-    nav.classList.remove("active");
-  };
+function activeClassListRemover() {
+  toggleButton.classList.remove("active");
+  nav.classList.remove("active");
+}
 
 toggleButton.addEventListener("click", activeClassListSwitch);
 
@@ -45,20 +45,20 @@ window.addEventListener("scroll", function () {
   }
 });
 
-window.addEventListener('resize', function(){
-    const windowWidth = window.innerWidth;
-    if(windowWidth > 700){
-        activeClassListRemover();
-    }
-  });
-
-  // Navbar & click handler when the navigation buttons are clicked
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      activeClassListRemover();
-    });
+window.addEventListener("resize", function () {
+  const windowWidth = window.innerWidth;
+  if (windowWidth > 700) {
+    activeClassListRemover();
+  }
 });
-  
+
+// Navbar & click handler when the navigation buttons are clicked
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    activeClassListRemover();
+  });
+});
+
 // Typeing handler
 class TxtType {
   constructor(el, toRotate, period) {
@@ -120,4 +120,30 @@ window.onload = function () {
   css.type = "text/css";
   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
   document.body.appendChild(css);
+};
+
+// validateInputChecker functions
+const nameValidate = (name) => {
+  const nameRegex =
+  /^[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű\s]*[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű][A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű\s]*$/;
+  return nameRegex.test(name);
+};
+
+const nameValidateLength = (name) => {
+  return name.length > 3;
+};
+
+const emailValidate = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const textareaValidate = (textArea) => {
+  return textArea.length >= 1;
+};
+
+const textForErrorMessages = {
+  name: "Please enter real name!",
+  email: "Please enter a valid email address!",
+  textArea: "Please enter a message!",
 };
