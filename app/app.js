@@ -4,6 +4,21 @@
 const header = document.querySelector("header");
 const nav = document.querySelector("nav");
 const toggleButton = document.querySelector(".toggle-button");
+const navLinks = document.querySelectorAll(".item")
+const errors = document.querySelectorAll(".error");
+
+// DOM inputs
+const nameInput = document.querySelector("#inputName");
+const emailInput = document.querySelector("#inputEmail1");
+const textArea = document.querySelector("#formControlTextarea1");
+
+// DOM Form
+const form = document.querySelector("form");
+
+// DOM ErrorMessages
+const nameErrorMessage = document.querySelector(".name-error-message");
+const emailErrorMessage = document.querySelector(".email-error-message");
+const textAreaErrorMessage = document.querySelector(".textarea-error-message");
 
 // The navbar and the toggle button switch
 function activeClassListSwitch() {
@@ -19,6 +34,7 @@ function activeClassListRemover(){
 toggleButton.addEventListener("click", activeClassListSwitch);
 
 window.addEventListener("scroll", function () {
+  activeClassListRemover();
   let windowScrollY = window.scrollY;
   if (windowScrollY > 20) {
     header.classList.add("active");
@@ -33,6 +49,14 @@ window.addEventListener('resize', function(){
         activeClassListRemover();
     }
   });
+
+  // Navbar & click handler when the navigation buttons are clicked
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      activeClassListRemover();
+    });
+
+});
   
   // Typeing handler
 class TxtType {
