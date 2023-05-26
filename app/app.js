@@ -10,11 +10,10 @@ const navLinks = document.querySelectorAll(".item");
 const errorsElement = document.querySelectorAll(".error");
 
 // DOM inputs
-const inputs = document.querySelectorAll(".fomInput");
+const inputs = document.querySelectorAll(".formInput");
 
 // DOM Form
 const form = document.querySelector("form");
-
 
 // The navbar and the toggle button switch
 function activeClassListSwitch() {
@@ -168,7 +167,7 @@ function validator(name, value) {
       error.classList.add("active");
       input.classList.add("active");
       isFormValid = false;
-    }else{
+    } else {
       error.innerHTML = "";
       error.classList.remove("active");
       input.classList.remove("active");
@@ -179,9 +178,9 @@ function validator(name, value) {
 let isFormValid = false;
 
 const validateForm = () => {
-  inputs.forEach((input)=>{
+  inputs.forEach((input) => {
     validator(input.name, input.value);
-  })
+  });
 
   let inputErrors = [];
 
@@ -205,3 +204,21 @@ function onblurEventHelper() {
   }
 }
 onblurEventHelper();
+
+// Post message with firestore
+const submitHandler = (event) => {
+  event.preventDefault();
+  validateForm();
+
+  const inputValues = {};
+
+  if (isFormValid) {
+    inputs.forEach((input) => {
+      inputValues[input.name] = input.value;
+      input.value = "";
+    });
+    services.addMessage(inputValues);
+  }
+};
+
+form.addEventListener("submit", submitHandler);
