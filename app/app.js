@@ -7,7 +7,7 @@ const header = document.querySelector("header");
 const nav = document.querySelector("nav");
 const toggleButton = document.querySelector(".toggle-button");
 const navLinks = document.querySelectorAll(".item");
-const errorsElement = document.querySelectorAll(".error");
+const errorsElements = document.querySelectorAll(".error");
 
 // DOM inputs
 const inputs = document.querySelectorAll(".formInput");
@@ -30,13 +30,30 @@ toggleButton.addEventListener("click", activeClassListSwitch);
 
 window.addEventListener("scroll", function () {
   activeClassListRemover();
-  let windowScrollY = window.scrollY;
+    let windowScrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const contactSection = document.querySelector('.contact-container');
+
   if (windowScrollY > 20) {
     header.classList.add("active");
   } else {
     header.classList.remove("active");
   }
+
+  if (documentHeight - (windowScrollY + windowHeight) >= contactSection.scrollHeight) {
+
+    errorsElements.forEach(( error) => {
+      error.classList.remove("active");
+      error.innerHTML="";
+    });
+    inputs.forEach((input) => {
+      input.classList.remove("active");
+      input.value = "";
+    });
+  }
 });
+
 
 window.addEventListener("resize", function () {
   const windowWidth = window.innerWidth;
@@ -184,7 +201,7 @@ const validateForm = () => {
 
   let inputErrors = [];
 
-  errorsElement.forEach((error) => {
+  errorsElements.forEach((error) => {
     if (error.innerHTML === "") {
       inputErrors.push(true);
     } else {
