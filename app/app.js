@@ -7,20 +7,14 @@ const header = document.querySelector("header");
 const nav = document.querySelector("nav");
 const toggleButton = document.querySelector(".toggle-button");
 const navLinks = document.querySelectorAll(".item");
-const errors = document.querySelectorAll(".error");
+const errorsElement = document.querySelectorAll(".error");
 
 // DOM inputs
-const nameInput = document.querySelector("#inputName");
-const emailInput = document.querySelector("#inputEmail1");
-const textArea = document.querySelector("#formControlTextarea1");
+const inputs = document.querySelectorAll(".fomInput");
 
 // DOM Form
 const form = document.querySelector("form");
 
-// DOM ErrorMessages
-const nameErrorMessage = document.querySelector(".name-error-message");
-const emailErrorMessage = document.querySelector(".email-error-message");
-const textAreaErrorMessage = document.querySelector(".textarea-error-message");
 
 // The navbar and the toggle button switch
 function activeClassListSwitch() {
@@ -123,27 +117,91 @@ window.onload = function () {
 };
 
 // validateInputChecker functions
-const nameValidate = (name) => {
+const isRealName = (name) => {
   const nameRegex =
-  /^[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű\s]*[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű][A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű\s]*$/;
+    /^[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű\s]*[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű][A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű\s]*$/;
   return nameRegex.test(name);
 };
 
-const nameValidateLength = (name) => {
+const isGreaterThanThree = (name) => {
   return name.length > 3;
 };
 
-const emailValidate = (email) => {
+const isEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
 
-const textareaValidate = (textArea) => {
-  return textArea.length >= 1;
+const isNotEmpty = (value) => {
+  return value !== "";
 };
 
 const textForErrorMessages = {
-  name: "Please enter real name!",
-  email: "Please enter a valid email address!",
-  textArea: "Please enter a message!",
+  requiredName: "Please enter real name!",
+  moreThan3: "Please enter real name!",
+  requiredEmail: "Please enter a valid email address!",
+  requiredTextArea: "Please enter a message!",
 };
+
+let validators = {
+  nameInput: {
+    requiredName: isRealName,
+    moreThan3: isGreaterThanThree,
+  },
+  emailInput: {
+    requiredEmail: isEmail,
+  },
+  textArea: {
+    requiredTextArea: isNotEmpty,
+  },
+};
+
+function validator(name, value) {
+  let validator = validators[name];
+
+  for (let validFn in validator) {
+    let error = document.getElementsByClassName(name)[0];
+    let input = document.getElementsByName(name)[0];
+
+    if (!validator[validFn](value)) {
+      error.innerHTML = textForErrorMessages[validFn];
+      error.classList.add("active");
+      input.classList.add("active");
+      isFormValid = false;
+    }else{
+      error.innerHTML = "";
+      error.classList.remove("active");
+      input.classList.remove("active");
+    }
+  }
+}
+
+let isFormValid = false;
+
+const validateForm = () => {
+  inputs.forEach((input)=>{
+    validator(input.name, input.value);
+  })
+
+  let inputErrors = [];
+
+  errorsElement.forEach((error) => {
+    if (error.innerHTML === "") {
+      inputErrors.push(true);
+    } else {
+      inputErrors.push(false);
+    }
+  });
+  isFormValid = !inputErrors.includes(false);
+};
+
+const onblurHandler = (event) => {
+  validator(event.target.name, event.target.value);
+};
+
+function onblurEventHelper() {
+  for (let input of inputs) {
+    input.addEventListener("blur", onblurHandler);
+  }
+}
+onblurEventHelper();

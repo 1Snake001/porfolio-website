@@ -227,8 +227,14 @@
       <form action="#" method="POST" class="info" novalidate>
         <div class="form-group">
           <label for="inputName">Name</label>
-          <input type="text" class="name-input" id="inputName" >
-          <div class="error name-error-message">
+          <input 
+            type="text"
+            class="name-input fomInput"
+            id="inputName"
+            name="nameInput"
+            >
+            
+          <div class="error name-error-message nameInput">
 
           </div>
         </div>
@@ -236,10 +242,11 @@
           <label for="inputEmail1">Email</label>
           <input
             type="email"
-            class="email-input"
+            class="email-input fomInput"
             id="inputEmail1"
+            name="emailInput"
           >
-          <div class="error email-error-message">
+          <div class="error email-error-message emailInput">
      
           </div>
         </div>
@@ -247,11 +254,12 @@
         <div class="form-group">
           <label for="formControlTextarea1">Message</label>
           <textarea
-            class="textarea"
+            class="textarea fomInput"
             id="formControlTextarea1"
             rows="10"
+            name="textArea"
           ></textarea>
-          <div class="error textarea-error-message">
+          <div class="error textarea-error-message textArea">
           
           </div>
         </div>
