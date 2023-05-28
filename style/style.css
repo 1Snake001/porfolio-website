@@ -344,16 +344,23 @@ h4 {
   padding-top: 25px;
 }
 
-.bio-text-content {
+.bio-text-content,
+#thx {
   margin-top: 20px;
   text-align: justify;
-  font-weight: 300;
+  font-weight: 500;
+  font-size: large;
 }
 
 #bio {
   text-align: center;
-  font-weight: 300;
+  font-weight: 500;
   color: rgb(100 104 118);
+}
+
+#thx {
+  margin: auto;
+  text-align: center;
 }
 
 .cv {
@@ -674,23 +681,22 @@ footer {
   margin-top: 5px;
 }
 
-.alert-succes{
+.alert-succes {
   display: none;
-position:relative;
-padding:20px 0;
-border: 2px green 1px;
-border-radius: 15px;
-background-color: greenyellow;
-color: green;
-text-align: center;
-width: 70%;
-margin: auto;
-bottom: 60px;
+  position: relative;
+  padding: 20px 0;
+  border: 2px green 1px;
+  border-radius: 15px;
+  background-color: greenyellow;
+  color: green;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  bottom: 60px;
 }
-.alert-succes.submitted{
+.alert-succes.submitted {
   display: block;
 }
-
 
 @media (max-width: 1200px) {
   .hero-container,
@@ -884,8 +890,9 @@ bottom: 60px;
 
   .bio-text-content,
   .web-text,
-  .video-text {
-    font-size: 90%;
+  .video-text,
+  #thx {
+    font-size: medium;
   }
 
   #web-title,
@@ -931,7 +938,8 @@ bottom: 60px;
 
   .bio-text-content,
   .web-text,
-  .video-text {
+  .video-text,
+  #thx {
     font-size: 80%;
   }
 
