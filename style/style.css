@@ -443,6 +443,7 @@ hr {
   transition: 0.5s all ease-in-out;
   top: 2px;
 }
+
 #onewheel:hover,
 #dance:hover,
 #fitness:hover,
@@ -609,6 +610,11 @@ input {
 .textarea.active {
   border: 2px solid red;
 }
+.email-input.submitted,
+.name-input.submitted,
+.textarea.submitted {
+  border: 2px solid greenyellow;
+}
 
 textarea {
   padding: 10px 0;
@@ -642,7 +648,6 @@ textarea {
 
 .btn-submit:hover {
   position: relative;
-  bottom: 5px;
   box-shadow: inset 5px 5px 10px #cbced1, inset -5px -5px 10px #fff;
 }
 
@@ -668,6 +673,24 @@ footer {
   color: red;
   margin-top: 5px;
 }
+
+.alert-succes{
+  display: none;
+position:relative;
+padding:20px 0;
+border: 2px green 1px;
+border-radius: 15px;
+background-color: greenyellow;
+color: green;
+text-align: center;
+width: 70%;
+margin: auto;
+bottom: 60px;
+}
+.alert-succes.submitted{
+  display: block;
+}
+
 
 @media (max-width: 1200px) {
   .hero-container,

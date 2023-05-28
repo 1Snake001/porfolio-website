@@ -8,7 +8,7 @@ const nav = document.querySelector("nav");
 const toggleButton = document.querySelector(".toggle-button");
 const navLinks = document.querySelectorAll(".item");
 const errorsElements = document.querySelectorAll(".error");
-
+const successAlert = document.querySelector(".alert-succes");
 // DOM inputs
 const inputs = document.querySelectorAll(".formInput");
 
@@ -26,14 +26,21 @@ function activeClassListRemover() {
   nav.classList.remove("active");
 }
 
+function removeSubmitted() {
+  for (let i of inputs) {
+    i.classList.remove("submitted");
+  }
+  successAlert.classList.remove("submitted");
+}
+
 toggleButton.addEventListener("click", activeClassListSwitch);
 
 window.addEventListener("scroll", function () {
   activeClassListRemover();
-    let windowScrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const contactSection = document.querySelector('.contact-container');
+  let windowScrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+  const contactSection = document.querySelector(".contact-container");
 
   if (windowScrollY > 20) {
     header.classList.add("active");
@@ -41,11 +48,14 @@ window.addEventListener("scroll", function () {
     header.classList.remove("active");
   }
 
-  if (documentHeight - (windowScrollY + windowHeight) >= contactSection.scrollHeight) {
-
-    errorsElements.forEach(( error) => {
+  if (
+    documentHeight - (windowScrollY + windowHeight) >=
+    contactSection.scrollHeight
+  ) {
+    removeSubmitted();
+    errorsElements.forEach((error) => {
       error.classList.remove("active");
-      error.innerHTML="";
+      error.innerHTML = "";
     });
     inputs.forEach((input) => {
       input.classList.remove("active");
@@ -53,7 +63,6 @@ window.addEventListener("scroll", function () {
     });
   }
 });
-
 
 window.addEventListener("resize", function () {
   const windowWidth = window.innerWidth;
@@ -145,7 +154,8 @@ const isGreaterThanThree = (name) => {
 
 const isEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
+  const accentedLetterRegex = /[^\u0000-\u007F]/; // Matches any character outside the basic ASCII range
+  return !accentedLetterRegex.test(email) && emailRegex.test(email);
 };
 
 const isNotEmpty = (value) => {
@@ -172,7 +182,7 @@ let validators = {
   },
 };
 
-function validator(name, value) {
+const validator = (name, value) => {
   let validator = validators[name];
 
   for (let validFn in validator) {
@@ -183,26 +193,22 @@ function validator(name, value) {
       error.innerHTML = textForErrorMessages[validFn];
       error.classList.add("active");
       input.classList.add("active");
-      isFormValid = false;
+      removeSubmitted();
     } else {
       error.innerHTML = "";
       error.classList.remove("active");
       input.classList.remove("active");
     }
   }
-}
+};
 
 let isFormValid = false;
-
 const validateForm = () => {
-  inputs.forEach((input) => {
-    validator(input.name, input.value);
-  });
-
   let inputErrors = [];
 
-  errorsElements.forEach((error) => {
-    if (error.innerHTML === "") {
+  inputs.forEach((input) => {
+    validator(input.name, input.value);
+    if (document.getElementsByClassName(input.name)[0].innerHTML === "") {
       inputErrors.push(true);
     } else {
       inputErrors.push(false);
@@ -220,6 +226,7 @@ function onblurEventHelper() {
     input.addEventListener("blur", onblurHandler);
   }
 }
+
 onblurEventHelper();
 
 // Post message with firestore
@@ -235,6 +242,12 @@ const submitHandler = (event) => {
       input.value = "";
     });
     services.addMessage(inputValues);
+    successAlert.classList.add("submitted");
+    for (let input of inputs) {
+      input.classList.add("submitted");
+    }
+  } else {
+    removeSubmitted();
   }
 };
 
