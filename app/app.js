@@ -226,7 +226,6 @@ function onblurEventHelper() {
     input.addEventListener("blur", onblurHandler);
   }
 }
-
 onblurEventHelper();
 
 // Post message with firestore
