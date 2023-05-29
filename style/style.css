@@ -620,7 +620,7 @@ input {
 .email-input.submitted,
 .name-input.submitted,
 .textarea.submitted {
-  border: 2px solid greenyellow;
+  border: 2px solid green;
 }
 
 textarea {
@@ -687,7 +687,7 @@ footer {
   padding: 20px 0;
   border: 2px green 1px;
   border-radius: 15px;
-  background-color: greenyellow;
+  background-color: rgba(0, 128, 0, 0.286);
   color: green;
   text-align: center;
   width: 70%;
