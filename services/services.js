@@ -1,18 +1,23 @@
 import db from "../firebase/firebaseConfig.js";
 import {
-collection,
-addDoc,
+  collection,
+  addDoc,
 } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
 
 const portfolioRef = collection(db, "portfolio");
 
 class Services {
-
-addMessage = async (newMessage) => {
-  return await addDoc(portfolioRef, newMessage)
-  }
+  addMessage = async (newMessage) => {
+    try {
+      const docRef = await addDoc(portfolioRef, newMessage);
+      return docRef;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  };
 }
 
-let services = new Services;
+const services = new Services();
 
 export default services;
