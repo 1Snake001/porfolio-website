@@ -403,7 +403,7 @@ h4 {
   margin-bottom: 50px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   -webkit-text-stroke: 1px rgba(60, 59, 59, 0.067);
-  letter-spacing: 10px;
+  letter-spacing: 5px;
   top: 10px;
 }
 
@@ -464,7 +464,7 @@ hr {
 
 .img-container {
   position: relative;
-  width: 102%;
+  width: 99%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -492,10 +492,10 @@ hr {
   font-weight: 500;
   margin-top: 100px;
   margin-bottom: 50px;
+  text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   -webkit-text-stroke: 1px rgba(60, 59, 59, 0.067);
-  text-align: center;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
   top: 80px;
 }
 
@@ -573,7 +573,7 @@ hr {
   margin-bottom: 50px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   -webkit-text-stroke: 1px rgba(60, 59, 59, 0.067);
-  letter-spacing: 10px;
+  letter-spacing: 5px;
 }
 
 .contact-container {
@@ -829,7 +829,6 @@ footer {
   .contact,
   .services {
     position: relative;
-    left: 7px;
     text-align: center;
     font-size: 4.5rem;
   }
@@ -927,8 +926,14 @@ footer {
   h4 {
     font-size: 80%;
   }
+
+  .self-container {
+    width: 260px;
+    height: 260px;
+}
+
   .name-container {
-    width: 80%;
+    width: 70%;
   }
   .project,
   .contact,
