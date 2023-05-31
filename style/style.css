@@ -967,3 +967,9 @@ footer {
     margin: 40px 0;
   }
 }
+
+@media (max-height: 380px) {
+  .item {
+    margin-top: 10px;
+  }
+}
