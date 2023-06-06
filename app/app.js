@@ -2,20 +2,20 @@
 
 import services from "../services/services.js";
 
-// DOM Elements
+
 const header = document.querySelector("header");
 const nav = document.querySelector("nav");
 const toggleButton = document.querySelector(".toggle-button");
 const navLinks = document.querySelectorAll(".item");
 const errorsElements = document.querySelectorAll(".error");
 const successAlert = document.querySelector(".alert-succes");
-// DOM inputs
+
 const inputs = document.querySelectorAll(".formInput");
 
-// DOM Form
+
 const form = document.querySelector("form");
 
-// The navbar and the toggle button switch
+
 function activeClassListSwitch() {
   toggleButton.classList.toggle("active");
   nav.classList.toggle("active");
@@ -71,14 +71,14 @@ window.addEventListener("resize", function () {
   }
 });
 
-// Navbar & click handler when the navigation buttons are clicked
+
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     activeClassListRemover();
   });
 });
 
-// Typeing handler
+
 class TxtType {
   constructor(el, toRotate, period) {
     this.toRotate = toRotate;
@@ -134,14 +134,14 @@ window.onload = function () {
     }
   }
 
-  // INJECT CSS
+
   let css = document.createElement("style");
   css.type = "text/css";
   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
   document.body.appendChild(css);
 };
 
-// validateInputChecker functions
+
 const isRealName = (name) => {
   const nameRegex =
     /^[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű\s]*[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű][A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰű\s]*$/;
@@ -154,7 +154,7 @@ const isGreaterThanThree = (name) => {
 
 const isEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const accentedLetterRegex = /[^\u0000-\u007F]/; // Matches any character outside the basic ASCII range
+  const accentedLetterRegex = /[^\u0000-\u007F]/; 
   return !accentedLetterRegex.test(email) && emailRegex.test(email);
 };
 
